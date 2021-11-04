@@ -1,0 +1,17 @@
+.Result {
+  background-color: #16191d;
+  width: fit-content;
+}
+
+.Result img {
+  margin: 0px 10px;
+}
+
+.Result .link {
+  text-align: right;
+}
+
+.Result a {
+  color: #28b39d;
+  text-decoration: none;
+}
