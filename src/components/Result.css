@@ -1,6 +1,7 @@
 .Result {
   background-color: #16191d;
   width: fit-content;
+  list-style: none;
 }
 
 .Result img {

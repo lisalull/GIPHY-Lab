@@ -10,9 +10,11 @@ const ResultsList = ({ gifArray }: Props) => {
   return (
     <div className="ResultsList">
       <h2>Results</h2>
-      {gifArray?.map((gif) => (
-        <Result gif={gif} />
-      ))}
+      <ul>
+        {gifArray?.map((gif) => (
+          <Result gif={gif} key={gif.id} />
+        ))}
+      </ul>
     </div>
   );
 };

@@ -7,13 +7,13 @@ interface Props {
 
 const Result = ({ gif }: Props) => {
   return (
-    <div className="Result">
-      <p>{gif.title}</p>
+    <li className="Result">
+      <h3>{gif.title}</h3>
       <img src={gif.images.original.url} alt="" />
       <p className="link">
         <a href={gif.url}>Link to Giphy</a>
       </p>
-    </div>
+    </li>
   );
 };
 

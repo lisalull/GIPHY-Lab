@@ -7,7 +7,7 @@ const key = process.env.REACT_APP_GIPHY_KEY || "";
 
 export const getTrendingGifs = (): Promise<GiphyResponse> => {
   return axios
-    .get("http://api.giphy.com/v1/gifs/trending", {
+    .get("https://api.giphy.com/v1/gifs/trending", {
       params: {
         api_key: key,
       },
@@ -21,7 +21,7 @@ export const getTrendingGifs = (): Promise<GiphyResponse> => {
 
 export const searchGifs = (searchTerm: string): Promise<GiphyResponse> => {
   return axios
-    .get("http://api.giphy.com/v1/gifs/search", {
+    .get("https://api.giphy.com/v1/gifs/search", {
       params: {
         api_key: key,
         q: searchTerm,
