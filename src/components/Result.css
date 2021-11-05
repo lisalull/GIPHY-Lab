@@ -16,3 +16,7 @@
   color: #28b39d;
   text-decoration: none;
 }
+
+.Result .favorite {
+  color: red;
+}

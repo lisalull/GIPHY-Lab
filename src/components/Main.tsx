@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router";
 import Gif from "../models/Gif";
 import GiphyResponse from "../models/GiphyResponse";
 import { getTrendingGifs, searchGifs } from "../services/GiphyService";
@@ -8,7 +9,13 @@ import SearchForm from "./SearchForm";
 
 const Main = () => {
   const [gifs, setGifs] = useState<Gif[]>([]);
-  const [searchTerm, setSearchTerm] = useState("");
+
+  //useLocation().search ~ the way to get the part of the URL after the question mark ex: ?term=cat
+  //new URLSearchParams(useLocation().search) ~ object representation of your query string parameters
+  //.get("PROVIDE A KEY and get the value for that key")
+  const searchTerm: string | null = new URLSearchParams(
+    useLocation().search
+  ).get("term");
 
   useEffect(() => {
     if (!searchTerm) {
@@ -24,7 +31,7 @@ const Main = () => {
 
   return (
     <div className="Main">
-      <SearchForm setSearchTerm={setSearchTerm} />
+      <SearchForm />
       <ResultsList gifArray={gifs} />
     </div>
   );
